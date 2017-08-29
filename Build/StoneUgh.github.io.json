@@ -1,0 +1,10 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "StoneUgh.github.io.data.unityweb",
+"asmCodeUrl": "StoneUgh.github.io.asm.code.unityweb",
+"asmMemoryUrl": "StoneUgh.github.io.asm.memory.unityweb",
+"asmFrameworkUrl": "StoneUgh.github.io.asm.framework.unityweb",
+"backgroundUrl": "StoneUgh.github.io.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF"
+}

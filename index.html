@@ -1,17 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
     <meta charset="utf-8">
-    <title>Stone Ugh</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Stone Ugh!</title>
+    <link rel="shortcut icon" href="img/iconough.ico"/>
 
-  <link rel="stylesheet" href="css/master.css">
+    <!--<link rel="stylesheet" href="css/estilos.css"/>-->
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/StoneUgh.github.io.json", {onProgress: UnityProgress});
+    </script>
+
+    <style media="screen">
+      body{
+        background-color: black;
+      }
+    </style>
   </head>
+
+
   <body>
-    <h1>Hola K ase?</h1>
 
-    <h2>Probando GitHub o k ase?</h2>
+    <p><link rel="stylesheet" href="" /></p>
+		<p><link rel="stylesheet" href="" /></p>
 
-    <h3>Haciendo otro commit o que hace</h3>
+    <div align="center">
+      <div class="webgl-content">
+        <div id="gameContainer" style="width: 960px; height: 600px"></div>
+        <div class="footer">
+          <div class="webgl-logo"></div>
+          <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        </div>
+      </div>
+    </div>
+
+
+  <p><link rel="stylesheet" href="" /></p>
+  <p><link rel="stylesheet" href="" /></p>
+  <p><link rel="stylesheet" href="" /></p>
+
+  <p class="content" align="center"> <span><img src="img/instrucciones.png" alt="" /></span></p>
 
   </body>
+
 </html>
