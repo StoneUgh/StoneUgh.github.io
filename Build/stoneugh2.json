@@ -1,0 +1,10 @@
+{
+"TOTAL_MEMORY": 557842432,
+"dataUrl": "stoneugh2.data.unityweb",
+"asmCodeUrl": "stoneugh2.asm.code.unityweb",
+"asmMemoryUrl": "stoneugh2.asm.memory.unityweb",
+"asmFrameworkUrl": "stoneugh2.asm.framework.unityweb",
+"backgroundUrl": "stoneugh2.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF"
+}

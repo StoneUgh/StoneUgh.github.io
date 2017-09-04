@@ -1,24 +1,32 @@
 function UnityProgress(gameInstance, progress) {
-  if (!gameInstance.Module)
+  var container = document.getElementById('gameContainer');
+  //if (container) document.body.style.background = container.style.background;
+
+  if (!gameInstance.Module) {
+     return;
+  } else if (progress === "complete") {
+    document.getElementById("loadingBox").style.display = "none";
+    //document.getElementById("icon").style.display = "none";
+    document.getElementById("loadingInfo").style.display = "none";
+    document.getElementById("box").style.display = "none";
     return;
-  if (!gameInstance.logo) {
-    gameInstance.logo = document.createElement("div");
-    gameInstance.logo.className = "logo " + gameInstance.Module.splashScreenStyle;
-    gameInstance.container.appendChild(gameInstance.logo);
+  } else if (progress == 1) {
+    document.getElementById("loadingInfo").innerHTML = "PROCESANDO...";
+    document.getElementById("spinner").style.display = "inherit";
+    document.getElementById("bgBar").style.display = "none";
+    document.getElementById("progressBar").style.display = "none";
+  } else if (progress > 0) {
+    document.getElementById("progressBar").style.width = 300 * progress + "px"
+    document.getElementById("loadingInfo").innerHTML = Math.round(progress * 100) + "%";
+    document.getElementById("spinner").style.display = "none";
+    document.getElementById("bgBar").style.display = "block";
+    document.getElementById("progressBar").style.display = "inherit";
   }
-  if (!gameInstance.progress) {    
-    gameInstance.progress = document.createElement("div");
-    gameInstance.progress.className = "progress " + gameInstance.Module.splashScreenStyle;
-    gameInstance.progress.empty = document.createElement("div");
-    gameInstance.progress.empty.className = "empty";
-    gameInstance.progress.appendChild(gameInstance.progress.empty);
-    gameInstance.progress.full = document.createElement("div");
-    gameInstance.progress.full.className = "full";
-    gameInstance.progress.appendChild(gameInstance.progress.full);
-    gameInstance.container.appendChild(gameInstance.progress);
-  }
-  gameInstance.progress.full.style.width = (100 * progress) + "%";
-  gameInstance.progress.empty.style.width = (100 * (1 - progress)) + "%";
-  if (progress == 1)
-    gameInstance.logo.style.display = gameInstance.progress.style.display = "none";
 }
+
+var gameInstance = UnityLoader.instantiate("gameContainer", "Build/stoneugh2.json", {
+  onProgress: UnityProgress,
+  Module: {
+    onRuntimeInitialized: function() { UnityProgress(gameInstance, "complete") }
+  }
+});
